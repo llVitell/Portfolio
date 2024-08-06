@@ -1,0 +1,39 @@
+---
+import Globe from "../../icons/globe.astro";
+import Section from "../Section.astro";
+import Networks from "../Networks.astro";
+---
+
+<section class="mb-10 flex flex-col gap-10 sm:flex-row">
+  <div class="order-last flex flex-col gap-2 sm:order-none">
+    <h1 class="mb-2 text-3xl font-medium">Omar Baldomero Vite Allca</h1>
+    <h2 class="font-medium">
+      Estudiante de Ciencias de la Computación con experiencia en desarrollo
+      frontend
+    </h2>
+    <span class="flex items-center gap-1 font-light"
+      ><Globe /> Lima, Perú
+    </span>
+    <Networks />
+  </div>
+  <div class="flex min-w-fit justify-start sm:justify-end">
+    <img
+      src="https://avatars.githubusercontent.com/u/83891398?s=400&u=3af008f415bc2ea8f40a789a1292676433a99b2f&v=4"
+      class="h-32 w-32 rounded-full object-cover"
+      alt="ProfilePhoto"
+    />
+  </div>
+</section>
+<Section title="Sobre mí">
+  <p class="text-justify font-light">
+    Alumno del 7mo ciclo de la Universidad Nacional de Ingeniería. Actualmente
+    soy miembro activo del grupo de divulgacion científica
+    <a
+      href="https://acecom.dev/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="font-semibold text-teal-800">ACECOM</a
+    >. Vivo en Lima, Perú. He participado en proyectos como diseñador y
+    desarrollador frontend.
+  </p>
+</Section>
