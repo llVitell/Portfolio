@@ -14,10 +14,10 @@ import ProyectCard from "../ProyectCard.astro";
     <div class="list">
       <div class="item" style="--position: 1">
         <ProyectCard
-          title="Portfolio"
+          title="Portafolio"
           github="https://github.com/llVitell/Portfolio"
-          url=""
-          description="Portafolio minimalista hecho con Astro"
+          url="https://portfolio-llvitells-projects.vercel.app/"
+          description="Portafolio personal con diseño minimalista"
           tags={["Astro", "Tailwind", "Vercel"]}
         />
       </div>
@@ -66,8 +66,8 @@ import ProyectCard from "../ProyectCard.astro";
     display: flex;
     align-items: center;
     left: 100%;
-    animation: autoRun 10s linear infinite;
-    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
+    animation: autoRun 12s linear infinite;
+    animation-delay: calc((12s / var(--quantity)) * (var(--position) - 1) - 12s);
   }
   @keyframes autoRun {
     from {

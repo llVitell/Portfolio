@@ -1,9 +1,11 @@
 ---
+import ExternalLink from "../icons/externalLink.astro"
 const {title, provider, credential} = Astro.props
 ---
-<a class="flex h-full w-full items-center justify-center gap-5 rounded-xl border border-stone-300 transition ease-in hover:border-2 hover:border-stone-900" href=`${credential}` target="_blank" rel="noopener noreferrer">
-  <div class="flex flex-col items-center">
-    <h3 class="text-lg font-medium">{title}</h3>
+<div class="flex w-full justify-between">
+  <div class="flex flex-col">
+    <h3 class="font-medium">{title}</h3>
     <span class="font-light">{provider}</span>
   </div>
-</a>
+  <a href=`${credential}` target="_blank" rel="noopener noreferrer"><ExternalLink/></a>
+</div>
