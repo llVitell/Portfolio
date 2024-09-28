@@ -1,6 +1,14 @@
 ---
+import WorkCard from "../WorkCard.astro"
 import Section from "../Section.astro"
 ---
 <Section title="Experiencia">
-
+    <div class="flex flex-col gap-3">
+        <WorkCard
+          title="Quieromicasa"
+          role="Desarrollador Frontend"
+          date="2020 - Actualidad"
+          skills={["Vue", "TailwindCSS", "Typescript"]}
+        />
+      </div>
 </Section>
