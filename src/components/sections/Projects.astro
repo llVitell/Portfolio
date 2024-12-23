@@ -1,43 +1,56 @@
 ---
 import Section from "../Section.astro";
 import ProyectCard from "../ProyectCard.astro";
+
+const projects = [
+    {
+        position: 1,
+        title: "Portafolio",
+        github: "https://github.com/llVitell/Portfolio",
+        url:"https://portfolio-llvitells-projects.vercel.app/",
+        description:"Portafolio personal con diseño minimalista",
+        tags: ["Astro", "Tailwind", "Vercel"]
+    },
+    {   
+        position: 2,
+        title: "Air Quality",
+        github: "https://github.com/llVitell/FrontVercel",
+        url:"https://front-vercel-1mc1yxk3u-llvitells-projects.vercel.app/",
+        description:"Panel para visualizar la calidad del aire en tiempo real",
+        tags: ["React", "Javascript", "Backend"]
+    },
+    {
+        position: 3,
+        title: "Skytech",
+        github: "",
+        url:"https://skytech-services.vercel.app/",
+        description:"Landing page de los servicios tecnológicos ofrecidos por Skytech",
+        tags: ["Astro", "Javascript", "LandingPage"]
+    }
+
+]
 ---
 
 <Section title="Proyectos">
   <div
     class="slider"
-    style="
+    style=`
     --width: 250px;
     --height: 250px;
-    --quantity: 3;"
+    --quantity: ${projects.length};`
   >
     <div class="list">
-      <div class="item" style="--position: 1">
-        <ProyectCard
-          title="Portafolio"
-          github="https://github.com/llVitell/Portfolio"
-          url="https://portfolio-llvitells-projects.vercel.app/"
-          description="Portafolio personal con diseño minimalista"
-          tags={["Astro", "Tailwind", "Vercel"]}
-        />
-      </div>
-      <div class="item" style="--position: 2">
-        <ProyectCard
-          title="Air Quality"
-          github="https://github.com/llVitell/FrontVercel"
-          url="https://front-vercel-1mc1yxk3u-llvitells-projects.vercel.app/"
-          description="Panel para visualizar la calidad del aire en tiempo real"
-          tags={["React", "Javascript", "Backend"]}
-        />
-      </div>
-      <div class="item" style="--position: 3">
-        <ProyectCard
-          title="Skytech"
-          url="https://skytech-services.vercel.app/"
-          description="Landing page de los servicios tecnológicos ofrecidos por Skytech"
-          tags={["Astro", "Typescript", "LandingPage"]}
-        />
-      </div>
+        {projects.map((project) => (
+            <div class="item" style=`--position: ${project.position}` >
+                <ProyectCard
+                    title={project.title}
+                    github={project.github}
+                    url={project.url}
+                    description={project.description}
+                    tags={project.tags}
+                />
+            </div>
+        ))}
     </div>
   </div>
 </Section>

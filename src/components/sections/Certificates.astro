@@ -1,24 +1,33 @@
 ---
 import CertificateCard from "../CertificateCard.astro";
 import Section from "../Section.astro";
+
+const certificates = [
+    {
+        title: "Scrum Professional Foundation",
+        provider: "CertiOne",
+        icon: "https://media.licdn.com/dms/image/v2/C4E0BAQGKN4BZGDsREg/company-logo_200_200/company-logo_200_200/0/1658357194740/certione_certification_logo?e=1743033600&v=beta&t=5bWqUBSC2gi3ja_2_MeeyP5hnAcvrnkXXZ98uLxxXDs",
+        credential: "https://certione.org/certificate-verification/35EF7B8-35EF694-303684B/"
+    },
+    {
+        title: "Github Foundations",
+        provider: "Github",
+        icon: "https://images.credly.com/size/340x340/images/024d0122-724d-4c5a-bd83-cfe3c4b7a073/image.png",
+        credential: "https://www.credly.com/badges/1ba4e44f-0b4f-4086-94f7-dbda67c455d6/public_url"
+    },
+    {
+        title: "Legacy JS Algorithms and Data Structures",
+        provider: "freeCodeCamp",
+        icon: "https://media.licdn.com/dms/image/v2/C4E0BAQGLKj3JHcof0w/company-logo_200_200/company-logo_200_200/0/1630639684997/free_code_camp_logo?e=1743033600&v=beta&t=0XsRiKf7QsugDnhOfT56mRJ6cIYU2BwN2xcMrJDeWsE",
+        credential: "https://freecodecamp.org/certification/fcc1e3af434-5cd4-414b-afc8-4d3be4b47f83/javascript-algorithms-and-data-structures"
+    }
+]
 ---
 
 <Section title="Certificados">
-  <div class="flex flex-col gap-3">
-    <CertificateCard
-      title="Scrum Professional Foundation"
-      provider="CertiOne"
-      credential="https://certione.org/certificate-verification/35EF7B8-35EF694-303684B/"
-    />
-    <CertificateCard
-      title="Programacion con Python"
-      provider="CTIC UNI"
-      credential="https://drive.google.com/file/d/16f3eh9EuBve7QQ0CtIVF34rBSsz_lpRz/view?usp=sharing"
-    />
-    <CertificateCard
-      title="Universidad Java - Cero a Experto"
-      provider="Udemy"
-      credential="https://udemy-certificate.s3.amazonaws.com/pdf/UC-9eab8119-1673-4ecb-8107-1a49f234774a.pdf"
-    />
+  <div class="flex flex-col gap-4">
+    {certificates.map((certificate)=>{
+        return <CertificateCard {...certificate}/>
+    })}
   </div>
 </Section>
